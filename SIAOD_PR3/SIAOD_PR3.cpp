@@ -72,7 +72,7 @@ void task1()
     cin.get();
     getline(cin, text);
 
-    char str[] = "Aba bala ba, da ba la bada la ba! Bala bla bada ba.";
+    char* str = new char[65546](); //Aba bala ba, da ba la bada la ba! Bala bla bada ba.
     string string_str = str;
 
     strcpy(str, text.c_str());
@@ -106,19 +106,18 @@ void task2()
     cin.get();
     getline(cin, text_sub);
 
-    char str[] = "Aba bala ba, da ba la bada la ba! Bala bla bada ba.";
-    string string_str = str;
+    char * str = new char[65546](); //I love SIAOD, it likes me!
     
-    char sub[] = "ba";
-    string string_sub = sub;
+    char * sub = new char[65546]();
 
     strcpy(str, text_str.c_str());
     strcpy(sub, text_sub.c_str());
 
+
     size_t* pi = new size_t();
     int counter = 0;
     prefix_find(str, sub, pi, f, counter);
-    cout << "The sentence with sub text (" << sub << ") has been copied at least " << counter << " times." << endl;
+    cout << "The sentence has been copied at least " << counter << " times." << endl;
     system("pause");
 }
 
