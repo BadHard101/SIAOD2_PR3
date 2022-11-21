@@ -65,10 +65,11 @@ vector<char>* get_last_word(string str) {
     return last_word;
 }
 
-int main()
+void task1()
 {
     cout << "Enter text: ";
-    string text;
+    string text; 
+    cin.get();
     getline(cin, text);
 
     char str[] = "Aba bala ba, da ba la bada la ba! Bala bla bada ba.";
@@ -89,5 +90,53 @@ int main()
     int counter = 0;
     prefix_find(str, obr, pi, f, counter);
 
-    cout << "Word (" << obr << ") was founded in text for " << counter << " times.";
+    cout << "Word (" << obr << ") was founded in text for " << counter << " times." << endl;
+    system("pause");
+}
+
+void task2()
+{
+    cout << "Enter text: ";
+    string text_str;
+    cin.get();
+    getline(cin, text_str);
+
+    cout << "Enter sub: ";
+    string text_sub;
+    cin.get();
+    getline(cin, text_sub);
+
+    char str[] = "Aba bala ba, da ba la bada la ba! Bala bla bada ba.";
+    string string_str = str;
+    
+    char sub[] = "ba";
+    string string_sub = sub;
+
+    strcpy(str, text_str.c_str());
+    strcpy(sub, text_sub.c_str());
+
+    size_t* pi = new size_t();
+    int counter = 0;
+    prefix_find(str, sub, pi, f, counter);
+    cout << "The sentence with sub text (" << sub << ") has been copied at least " << counter << " times." << endl;
+    system("pause");
+}
+
+int main() {
+
+    cout << "Enter the task number: ";
+    int task;
+    cin >> task;
+
+    switch (task) {
+    case 1:
+        task1();
+        break;
+    case 2:
+        task2();
+        break;
+    default:
+        break;
+    }
+    return 0;
 }
